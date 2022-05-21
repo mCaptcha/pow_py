@@ -1,0 +1,13 @@
+[package]
+name = "pow-py"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "pow_sha256_py"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.16.3", features = ["extension-module"] }
+pow_sha256 = { version = "0.2.1", git = "https://github.com/mcaptcha/pow_sha256" }
