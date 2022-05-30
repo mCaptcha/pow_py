@@ -18,7 +18,7 @@ static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
 use pow_sha256::{Config, ConfigBuilder, PoW};
 
-#[pyclass(name = "Work", module = "pow_py")]
+#[pyclass(name = "Work", module = "mcaptcha_pow_py")]
 #[derive(Debug, PartialEq, Clone)]
 pub struct Work {
     #[pyo3(get)]
@@ -36,7 +36,7 @@ impl From<PoW<String>> for Work {
     }
 }
 
-#[pyclass(name = "PoWConfig", module = "pow_py")]
+#[pyclass(name = "PoWConfig", module = "mcaptcha_pow_py")]
 #[derive(Debug, PartialEq, Clone)]
 pub struct PoWConfig {
     config: Config,
@@ -82,7 +82,7 @@ mod tests {
 
 #[cfg(not(tarpaulin_include))]
 #[pymodule]
-#[pyo3(name = "pow_py")]
+#[pyo3(name = "mcaptcha_pow_py")]
 fn my_extension(py: Python, m: &PyModule) -> PyResult<()> {
     m.add_class::<PoWConfig>()?;
     m.add_class::<Work>()?;

@@ -3,7 +3,7 @@ requires = ["maturin>=0.12,<0.13"]
 build-backend = "maturin"
 
 [project]
-name = "pow-py"
+name = "mcaptcha-pow-py"
 requires-python = ">=3.6"
 classifiers = [
     "Programming Language :: Rust",
